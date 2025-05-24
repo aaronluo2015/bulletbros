@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // 提供静态文件服务
-app.use(express.static(path.join(__dirname)));
+app.use('/file', express.static(path.join(__dirname, 'public')));
 
 // 定义首页路由
 app.get('/', (req, res) => {
