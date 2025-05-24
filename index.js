@@ -1,4 +1,5 @@
 const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
 
 const app = express();
@@ -17,6 +18,15 @@ app.use(express.static(path.join(__dirname)));
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+// 定义代理路由
+app.use('/proxy', createProxyMiddleware({
+  target: 'https://bulletbros.gitlab.io/file',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/proxy': '',
+  },
+}));
 
 // 启动服务器
 app.listen(PORT, () => {
