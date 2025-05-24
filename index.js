@@ -20,11 +20,11 @@ app.get('/', (req, res) => {
 });
 
 // 定义代理路由
-app.use('/proxy', createProxyMiddleware({
+app.use('/file', createProxyMiddleware({
   target: 'https://bulletbros.gitlab.io/file',
   changeOrigin: true,
   pathRewrite: {
-    '^/proxy': '',
+    '^/file': '',
   },
 }));
 
