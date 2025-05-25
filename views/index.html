@@ -11,23 +11,15 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff; /* Light blue background */
+            background-color: #f4f4f4;
             color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 1.5em;
-        }
         .game-container {
             position: relative;
-            width: 80%;
-            max-width: 1200px;
+            width: 800px;
             height: 600px;
             border: 2px solid #000;
             background-color: #fff;
@@ -105,7 +97,7 @@
 </head>
 <body>
     <div class="game-container">
-        <iframe id="game-iframe" src="https://gnhustgames.github.io/bullet-bros/" allowfullscreen></iframe>
+        <iframe id="game-iframe" src="/file/index.html" allowfullscreen></iframe>
         <button class="full-screen-btn" onclick="enterFullScreen()">Full Screen</button>
         <button class="exit-full-screen-btn" onclick="exitFullScreen()">Exit Full Screen</button>
     </div>
@@ -131,7 +123,7 @@
         </div>
     </div>
     <footer>
-        <p>&copy; <span id="current-year"></span> Bullet Bros Game. All rights reserved.</p>
+        <p>&copy; 2025 Bullet Bros Game. All rights reserved.</p>
     </footer>
     <script>
         function enterFullScreen() {
@@ -149,9 +141,6 @@
             document.querySelector('.full-screen-btn').style.display = 'block';
             document.querySelector('.exit-full-screen-btn').style.display = 'none';
         }
-
-        // Set the current year in the footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
